@@ -213,14 +213,20 @@
       if (/[A-Za-z0-9!#$%^&*()]+@[A-Za-z0-9!#$%^&*()]+\.+[A-Za-z0-9!#$%^&*()\.]{1,}/.test(emaildata[0].value)){
         emaildata[1].style.display = "none";
         emaildata[0].classList.remove("erroricon");
-        emaildata[1].innerHTML = "Email Cannot be empty";        
+        emaildata[1].innerHTML = "Email Cannot be empty";
+        emaildata[0].style.color = "black";
+
       } else{
         emaildata[0].classList.add("erroricon");
         emaildata[1].style.display = "initial";
         if(emaildata[0].value == null || emaildata[0].value.trim() === ''){
           emaildata[1].innerHTML = "Email Cannot be empty"
+          emaildata[0].style.color = "black";
+
         } else{
-          emaildata[1].innerHTML = "Looks like this is not an email";        
+          emaildata[1].innerHTML = "Looks like this is not an email";
+          emaildata[0].style.color = "red";
+          count -= 1        
           }
         }    
         if(count==4){
